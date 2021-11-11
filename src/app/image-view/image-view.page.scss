@@ -1,0 +1,56 @@
+ion-toolbar {
+  --padding-end: 15px;
+  --padding-top: 20px;
+  --padding-bottom: 10px;
+  --border-width: 0px !important;
+  ion-back-button {
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+  }
+  .menu {
+    --border-width: 1px;
+    --border-radius: 10px;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+ion-content {
+  // --background: url("/../assets/images/image.png") 0 0/100% 100% no-repeat;
+  --background: white;
+  display: flex !important;
+  .add-comment {
+    position: fixed;
+    bottom: 30px;
+    display: flex;
+    width: calc(100% - 40px);
+    margin: 0px 20px;
+    .comment {
+      height: 60px;
+      flex-grow: 1;
+    }
+    .share {
+      width: 60px;
+      height: 60px;
+      margin-left: 10px;
+    }
+  }
+  .like-content {
+    position: fixed;
+    bottom: 105px;
+    width: calc(100% - 40px);
+    margin: 0px 20px;
+    .like {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+ion-content::part(scroll) {
+  margin: 0px !important;
+  border-top-left-radius: 50px !important;
+  border-top-right-radius: 50px !important;
+}

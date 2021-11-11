@@ -1,0 +1,16 @@
+<ion-item class="like-card">
+  <div slot="start" class="avatar">
+    <ion-thumbnail (click)="gotoUserAlbum(photo_id)">
+      <img [src]="avatar">
+    </ion-thumbnail>
+  </div>
+  <div class="like-detail">
+    <ion-label class="like-name" (click)="gotoUserAlbum()">{{ name }}</ion-label>
+    <ion-label class="like-time"> Liked your photo. <br /> {{ time }}</ion-label>
+  </div>
+  <div slot="end" class="photo">
+    <ion-thumbnail>
+      <img [src]="photo">
+    </ion-thumbnail>
+  </div>
+</ion-item>

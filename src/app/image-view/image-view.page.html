@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" text="" defaultHref="contact-list"></ion-back-button>
+      <ion-label>
+        {{ caption }}
+      </ion-label>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="menu" fill="outline" color="light" (click)="handleImage($event)">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="image-view" [scrollY]="false">
+  <ion-img src="{{uploadcare_url}}"></ion-img>
+  <div class="like-content">
+    <ion-fab-button class="like ion-float-right" *ngIf="like_status" (click)="giveLike()">
+      <ion-icon name="heart" style="color: red"></ion-icon>
+      <ion-label>{{like_count}}</ion-label>
+    </ion-fab-button>
+
+    <ion-fab-button class="like ion-float-right" *ngIf="no_like_status" (click)="giveLike()">
+      <ion-icon name="heart"></ion-icon>
+      <ion-label>{{like_count}}</ion-label>
+    </ion-fab-button>
+  </div>
+  <div class="add-comment">
+    <ion-button expand="block" class="comment" color="primary" shape="round" (click)="handleModal()">
+      Comments
+    </ion-button>
+    <ion-fab-button class="share ion-float-right" (click)="socialShare()">
+      <ion-icon name="share-social-outline"></ion-icon>
+    </ion-fab-button>
+  </div>
+</ion-content>

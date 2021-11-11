@@ -1,0 +1,17 @@
+<ion-content>
+  <ion-item color="primary" expand="block" (click)="dismiss()">
+    <ion-icon slot="icon-only" name="eye"></ion-icon>
+    viewed by {{view_count}}
+  </ion-item>
+  <ion-item class="view" *ngFor="let list of view_list">
+    <div slot="start" class="contact-avatar">
+      <ion-thumbnail>
+        <img src="{{list.avatar}}">
+      </ion-thumbnail>
+    </div>
+    <div class="contact-detail">
+      <ion-label class="contact-name">{{list.first_name + ' ' + list.last_name}}</ion-label>
+      <ion-label class="contact-phone">{{list.past_time}}</ion-label>
+    </div>
+  </ion-item>
+</ion-content>

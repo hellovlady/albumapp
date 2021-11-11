@@ -1,0 +1,35 @@
+ion-card {
+  border-radius: 15px;
+  margin: 0px;
+  img {
+    border-radius: 15px;
+  }
+  ion-card-header {
+    padding: 10px;
+  }
+  ion-card-title {
+    font-size: 14px;
+    text-align: center;
+    color: black;
+    img {
+      border-radius: 0px;
+      padding-left: 10px;
+      filter: invert(0) sepia(0) saturate(1) hue-rotate(0deg);
+    }
+  }
+  position: relative;
+}
+
+ion-badge{
+  position: absolute;
+  border-radius: 50%;
+  font-size: 12px;
+  width: 25px;
+  height: 25px;
+  padding: 0px;
+  align-items: center;
+  display: flex;
+  right: -12px;
+  justify-content: center;
+  top: -12px;
+}

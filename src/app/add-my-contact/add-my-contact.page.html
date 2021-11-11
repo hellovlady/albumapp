@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" text="" (click)="dismiss()" defaultHref="my-contacts"></ion-back-button>
+      <ion-label>
+        Add Contacts
+      </ion-label>
+    </ion-buttons>
+    <ion-button class="camera" slot="end" fill="outline" (click)="insertContacts()">
+      <img src="assets/icon/sms.svg">
+    </ion-button>
+  </ion-toolbar>
+  <!-- <ion-toolbar class="search" color="primary">
+    <ion-input type="text" placeholder="Search Contacts" (ionInput)="getContactListSearch($event)" padding>
+      <img src="assets/icon/search.svg"/>
+    </ion-input>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content scrollY="true" [scrollEvents]="true">
+  <ion-list>
+    <ion-item *ngFor="let list of allDisplayList">
+      <ion-label>{{list.user_name + ' (+' + list.phone_number + ')'}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="list.isChecked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>

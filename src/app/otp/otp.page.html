@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-label class="page-title" color="light">Verify OTP</ion-label>
+  <ion-label class="comment" color="light">Please Enter The One Time Pin Code <br>
+  That Was Sent To Your Mobile</ion-label>
+  <ion-label class="phone-no" color="light">+{{phoneNumber}} <img src="assets/icon/edit.svg" alt="" (click)="chnagePhone()" tappable></ion-label>
+</ion-header>
+<ion-content>
+  <div class="verify-code ion-justify-content-between">
+    <ion-input class="pin first" type="text" maxlength="1" [(ngModel)]="otp0" (keyup)="moveFocus(b)"></ion-input>
+    <ion-input class="pin second" type="text" maxlength="1" [(ngModel)]="otp1" #b (keyup)="moveFocus(c)"></ion-input>
+    <ion-input class="pin third" type="text" maxlength="1" [(ngModel)]="otp2" #c (keyup)="moveFocus(d)"></ion-input>
+    <ion-input class="pin fourth" type="text" maxlength="1" [(ngModel)]="otp3" #d></ion-input>
+  </div>
+  <ion-button class="verify" expand="block" color="primary" shape="round" (click)="roleSelection()">Verify</ion-button>
+  <ion-button class="resend" expand="block" color="primary" fill="outline" shape="round" (click)="reSend()">Resend</ion-button>
+</ion-content>

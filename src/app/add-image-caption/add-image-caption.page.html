@@ -1,0 +1,18 @@
+<!-- add image caption v1 -->
+
+<ion-content scrollY="false">
+  <ion-thumbnail class="new-image">
+    <img src="{{cdn_url}}"/>
+    <ion-fab-button color="primary" [routerLink]="['/contact-list']">
+      <ion-icon size="small" name="close-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-thumbnail>
+</ion-content>
+<ion-footer>
+  <ion-textarea placeholder="C@ption" [(ngModel)]="caption" class="caption">
+  </ion-textarea>
+  <ion-button expand="block" color="primary" class="add-caption" shape="round" (click)="addPhoto()">
+    Add
+  </ion-button>
+</ion-footer>
+

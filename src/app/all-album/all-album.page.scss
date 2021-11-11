@@ -1,0 +1,28 @@
+ion-toolbar {
+  --padding-end: 15px;
+  --padding-top: 20px;
+  --padding-bottom: 10px;
+  --border-width: 0px !important;
+  ion-back-button {
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+  }
+  .menu {
+    --border-width: 1px;
+    --border-radius: 10px;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+ion-content {
+  --background: white;
+  --padding-top: 20px;
+  ion-col {
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+  ion-col:last-child {
+    margin-right: 0px;
+  }
+}

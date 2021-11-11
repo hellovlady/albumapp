@@ -1,0 +1,40 @@
+<ion-header class="title" >
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" text="" (click)="goContactList()"  defaultHref="contact-list"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-label class="page-title" color="light">
+    My-Profile
+  </ion-label>
+  <div class="avatar" >
+    <img src="assets/icon/profile-avatar.svg" *ngIf="noavatar" alt="" width="100%">
+    <img src="{{avatar}}" style="border-radius: 50%;" *ngIf="avatar" alt="" width="100%">
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button size="small" color="light" (click)="uploadAvatar()">
+        <img src="assets/icon/camera.svg" class="svg" alt=""/>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-header>
+<ion-content mode="md">
+  <ion-input class="first-name" type="text" placeholder="First Name" [(ngModel)]="first_name" padding>
+    <img src="assets/icon/edit.svg" alt="">
+  </ion-input>
+  <ion-input class="last-name" type="text" placeholder="Last Name" [(ngModel)]="last_name" padding>
+    <img src="assets/icon/edit.svg" alt="">
+  </ion-input>
+  <ion-input class="mobile" type="tel" placeholder="Mobile" [(ngModel)]="phone_number" padding>
+    <img src="assets/icon/edit.svg" alt="">
+  </ion-input>
+  <ion-button class="update" expand="block" shape="round" (click)="updateProfile()">Update</ion-button>
+  <ion-button class="edit-album" expand="block" fill="outline" shape="round" [routerLink]="['/edit-album']">
+    <img src="assets/icon/album.svg">Edit Album
+  </ion-button>
+  <ion-button class="edit-status" expand="block" fill="outline" shape="round" (click)="editStatus()">
+    <img src="assets/icon/sms.svg">Edit Status
+  </ion-button>
+  <ion-button class="update" expand="block" shape="round" (click)="signOut()">
+    Sign Out
+  </ion-button>
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar class="header" color="primary">
+    <ion-buttons slot="start">
+      <ion-button class="camera" fill="outline" (click)="handleAddPhoto()">
+        <img src="assets/icon/camera.svg">
+      </ion-button>
+      <ion-button class="camera" fill="outline" [routerLink]="['/my-contacts']">
+        <img src="assets/icon/sms.svg">
+      </ion-button> 
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <div class="notification">
+        <ion-button fill="outline" [routerLink]="['/notification']">
+          <img src="assets/icon/comments.svg">
+        </ion-button>
+        <ion-badge color="light" *ngIf="comment_count>0">{{comment_count}}</ion-badge>
+      </div>
+      <ion-thumbnail slot="start" class="profile" (click)="goProfile()">
+        <img src="assets/avatars/default.svg" *ngIf="user_avatar == null" alt="userAvatar">
+        <img src="{{user_avatar}}" *ngIf="user_avatar">
+      </ion-thumbnail>
+    </ion-buttons>
+    <ion-title class="justify-center">
+      <div class="likes">
+        <div class="like">
+          <ion-button fill="outline" [routerLink]="['/likes']">
+            <ion-icon color="light" name="heart"></ion-icon>
+          </ion-button>
+          <ion-badge color="light" *ngIf="like_count>0">{{like_count}}</ion-badge>
+        </div>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar class="search" color="primary">
+    <ion-input type="text" placeholder="Search by name" (ionInput)="getContactListSearch($event)" padding>
+      <img src="assets/icon/search.svg"/>
+    </ion-input>
+  </ion-toolbar>
+  <ion-toolbar class="recent" color="primary">
+    <ion-label>Recent</ion-label>
+    <ion-grid>
+      <ion-row class="recent-contacts">
+          <ion-col *ngFor="let r_contact of recent_contact_list">
+            <div class="recent-contact">
+              <ion-thumbnail>
+                <img src="{{r_contact.avatar}}" *ngIf="r_contact.avatar">
+                <img src="assets/avatars/default.svg" alt="avatar" *ngIf="r_contact.avatar == null">
+              </ion-thumbnail>
+              <!-- <ion-label>{{r_contact.first_name + ' ' + r_contact.last_name}}</ion-label> -->
+            </div>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <app-contact avatar="{{contact.avatar}}" name="{{contact.first_name + ' ' +  contact.last_name}}" phone="{{contact.phone_number}}" [block]="contact.block_status"  [user_id]="contact.user_id" *ngFor="let contact of contact_list"></app-contact>
+    <!-- [notification]="5" -->
+</ion-content>

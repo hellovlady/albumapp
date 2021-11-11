@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-label class="app-title" color="light">@lbum app</ion-label>
+</ion-header>
+<ion-content>
+  <ion-input class="mobile" type="tel" [(ngModel)]="phone_number" placeholder="Mobile" pattern="[0-9]*" padding></ion-input>
+  <span *ngIf="errMsg"  class="text-danger" style="color: red;"> {{errMsg.login_error}} </span>
+  <ion-button class="login" expand="block" color="primary" (click)="login()" shape="round" >Sign In</ion-button>
+  <div class="remember-me">
+    <ion-checkbox class="check" color="light"></ion-checkbox>
+    Remember Me
+  </div>
+  <div class="register">
+    No Accounts Yet, Click <br>Here To 
+    <a (click)="goRegister()">Register</a>
+  </div>
+</ion-content>

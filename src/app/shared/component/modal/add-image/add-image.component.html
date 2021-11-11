@@ -1,0 +1,29 @@
+<ion-content class="add-photo">
+  <div class="title">
+    <ion-label>
+      Add Photos
+    </ion-label>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="uploadcare()" >
+          <img src="assets/icon/photo-camera.svg" alt="" width="40%">
+          <ion-label>
+            Upload Photo
+          </ion-label>
+          <input id="uploader" type="hidden" />
+        </ion-card>
+      </ion-col>
+      <!-- <ion-col>
+        <ion-card (click)="uploadcare()">
+          <img src="assets/icon/photo-camera.svg" alt="" width="40%">
+          <ion-label>
+            Gallery
+          </ion-label>
+        </ion-card>
+      </ion-col> -->
+    </ion-row>
+  </ion-grid>
+  <ion-button expand="block" color="primary" (click)="dismiss()" shape="round">Cancel</ion-button>
+</ion-content>

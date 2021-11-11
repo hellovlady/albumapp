@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" text="" defaultHref="contact-list"></ion-back-button>
+      <ion-label>
+        {{first_name + ' ' + last_name}}
+      </ion-label>
+    </ion-buttons>
+    <!-- <ion-buttons slot="end">
+      <ion-button class="menu" fill="outline" color="light">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+  <ion-toolbar class="status-text" color="primary">
+    <ion-label color="light">
+      {{status}}
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="album">
+  <ion-grid>
+
+    <ion-row *ngFor="let multirow of grid">
+      <ion-col *ngFor="let row of multirow" >
+        <div *ngIf="row">
+          <app-album thumbnail="assets/images/album5.png" *ngIf="row.noAlbumImage" [edit]="true" album_id="{{row.id}}" album_name="{{row.name}}" title="{{row.name}}"></app-album>
+          <app-album thumbnail="{{row.uploadcare_url}}" *ngIf="row.isAlbumImage" [edit]="true" album_id="{{row.id}}" album_name="{{row.name}}" title="{{row.name}}"></app-album>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col>
+        <app-album thumbnail="assets/images/album1.png" [notification]="5" [edit]="true" title="@lbum1"></app-album>
+      </ion-col>
+      <ion-col>
+        <app-album thumbnail="assets/images/album2.png" [edit]="true" title="@lbum2"></app-album>
+      </ion-col>
+    </ion-row> -->
+  </ion-grid>
+</ion-content>

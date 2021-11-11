@@ -1,0 +1,13 @@
+<ion-card>
+  <img [src]="thumbnail" (click)="gotoCaption(album_id, up_url, caption)" width="100%"/>
+  <ion-card-header color="light" (click)="editAlbumTitle(album_id, album_name)">
+    <ion-card-title>
+      {{ title }}
+      <ion-label color="primary" *ngIf="comments">
+        ({{comments}})
+      </ion-label>
+      <img src="assets/icon/edit.svg" alt="" *ngIf="edit">
+    </ion-card-title>
+  </ion-card-header>
+</ion-card>
+<ion-badge color="primary" *ngIf="notification">{{ notification }}</ion-badge>

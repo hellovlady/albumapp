@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-label class="app-title" color="light">Hello! <br>
+                                Sign Up & Enjoy <br>
+                                @lbum app</ion-label>
+</ion-header>
+<ion-content>
+  <ion-input class="first-name" type="text" [(ngModel)]="first_name" placeholder="First Name" padding></ion-input>
+  <span *ngIf="errMsg.first_name"  class="text-danger"> {{errMsg.first_name}} </span>
+
+  <ion-input class="last-name" type="text" [(ngModel)]="last_name" placeholder="Last Name" padding></ion-input>
+  <span *ngIf="errMsg.last_name"  class="text-danger"> {{errMsg.last_name}} </span>
+
+  <ion-input class="mobile" type="tel" [(ngModel)]="phone_number" placeholder="Mobile" padding></ion-input>
+  <span *ngIf="errMsg.phone_number" class="text-danger"> {{errMsg.phone_number}} </span>
+
+  <ion-button class="register" expand="block" color="primary" (click)="register()" shape="round">Register</ion-button>
+  <div class="agree-term" style="flex-direction: column;">
+    <div style="display: flex; align-items: center;"><ion-checkbox class="check" color="light" required [(ngModel)]="tc"></ion-checkbox> I Agree To Terms & Conditions </div>
+    <div *ngIf="errMsg.tc" class="text-danger"> {{errMsg.tc}} </div>
+  </div>
+  <div class="login">
+    <a (click)="goLogin()" >Back To Login</a>
+  </div>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" text="" defaultHref="contact-list"></ion-back-button>
+      <ion-label>
+        Select @Lbum
+      </ion-label>
+    </ion-buttons>
+    <ion-button class="camera" slot="end" fill="outline" (click)="createAlbumModal()">
+      <img src="assets/icon/sms.svg">
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let multirow of grid">
+      <ion-col *ngFor="let row of multirow" >
+        <div *ngIf="row">
+          <app-album thumbnail="{{uploadcare_url}}" *ngIf="row.noAlbumImage" album_id="{{row.id}}" up_url="{{uploadcare_url}}" caption="{{caption}}" title="{{row.name}}"></app-album>
+          <app-album thumbnail="{{row.uploadcare_url}}" *ngIf="row.isAlbumImage" album_id="{{row.id}}" up_url="{{uploadcare_url}}" caption="{{caption}}" title="{{row.name}}"></app-album>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

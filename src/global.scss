@@ -1,0 +1,231 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+.md,
+.ios {
+
+  ion-content::part(background) {
+    --padding-start: 20px;
+    border-top-left-radius: 50px !important;
+    border-top-right-radius: 50px !important;
+  }
+  
+  ion-content::part(scroll) {
+    margin: 40px 20px 0px !important;
+  }
+  
+  ion-content.album::part(scroll) {
+    margin-top: 20px;
+  }
+
+  ion-button.button-solid{
+    --ion-color-primary: linear-gradient(#1DA0F1, #2590D1);
+  }
+  
+  ion-button {
+    font-size: 14px;
+    margin: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-transform: initial;
+  }
+  
+  ion-buttons[slot=start] {
+    margin-inline-start: 0px;
+  }
+  
+  ion-buttons[slot=end] {
+    margin-inline-end: 0px;
+  }
+  
+  ion-checkbox {
+    --background: white;
+    --border-color: #F8F8F8;
+    --border-color-checked: #F8F8F8;
+    --border-width: 2px;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    --border-radius: 4px;
+    --checkmark-width: 2px;
+  }
+  
+  ion-input {
+    line-height: 2.7;
+    --background: white !important;
+    font-size: 14px !important;
+    border: 1.5px solid #F8F8F8;
+    box-shadow: 0px 3px 10px rgb(0 0 0 / 4%);
+    border-radius: 30px;
+    --padding-start: 30px !important;
+    --padding-end: 30px !important;
+    --color:#a6a6a6 !important;
+  }
+  
+  ion-textarea {
+    --background: white !important;
+    --color:#a6a6a6 !important;
+    border: 1.5px solid #F8F8F8;
+    box-shadow: 0px 3px 10px rgb(0 0 0 / 4%);
+    border-radius: 15px;
+    --padding-start: 30px !important;
+    --padding-end: 30px !important;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    font-size: 14px !important;
+  }
+  
+  ion-toolbar {
+    --padding-start: 0px;
+    --padding-end: 0px;
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+  }
+  
+  ion-item {
+    --border-style: none;
+    --inner-padding-end: 0px;
+  }
+  
+  ion-grid{
+    padding: 0px;
+    ion-row{
+      padding: 0px;
+      ion-col {
+        padding: 0px;
+      }
+    }
+  }
+  
+  ion-card {
+    border: 1.5px solid #F8F8F8;
+    box-shadow: 0px 3px 20px rgb(59 130 173 / 8%);
+  }
+  
+  .header-ios ion-toolbar:last-of-type{
+    border-bottom: none;
+    --border-width: 0px;
+  }
+  
+  .header-md::after {
+    background-image: none;
+  }
+  
+  .user-popover-class .popover-content {
+    // --width: unset;
+    top: 0px;
+    left: initial !important;
+    right: 20px !important;
+    border-radius: 10px;
+  }
+  
+  .user-popover-class .popover-arrow, .imageview-popover-class .popover-arrow {
+    display: none;
+  }
+  
+  .imageview-popover-class .popover-content{
+    --width: 154px;
+    left: initial !important;
+    right: 20px !important;
+    border-radius: 10px;
+  }
+
+  .addimage-modal-class .modal-wrapper,
+  .view-modal-class .modal-wrapper,
+  .comment-modal-class .modal-wrapper {
+    --background: transparent;
+    position: fixed;
+    bottom: 0px;
+    --width: 100%;
+  }
+
+  .addimage-modal-class .modal-shadow.sc-ion-modal-ios ,
+  .view-modal-class .modal-shadow.sc-ion-modal-ios ,
+  .comment-modal-class .modal-shadow.sc-ion-modal-ios {
+    display: none;
+  }
+
+  .addimage-modal-class .modal-wrapper {
+    height: 350px;
+  }
+
+  .comment-modal-class .modal-wrapper {
+    height: 60%;
+    max-height: 500px;
+  }
+  .comment-modal-class {
+    --ion-backdrop-opacity: 0;
+  }
+
+  .view-modal-class .modal-wrapper {
+    height: 80%;
+  }
+}
+
+ion-alert .alert-message{
+  color: white !important;
+}
+
+.alert-wrapper {
+  background-color: #1da1f2 !important;
+  width: 100% !important;
+  button {
+    color: white !important;
+
+    .alert-checkbox-label {
+      font-size: 16px !important;
+    }
+
+    .alert-checkbox-icon.sc-ion-alert-ios {
+      background: white !important;
+    }
+
+  }
+  textarea {
+    background: white !important;
+    color: black !important;
+    height: 70px !important;
+    font-size: 16px !important;
+  }
+  input {
+    background: white !important;
+    color: black !important;
+    height: 30px !important;
+    font-size: 16px !important;
+  }
+}
+
+ion-list {
+  height: 100% !important;
+  overflow-y: auto;
+  ion-item {
+    ion-label {
+      color: black !important;
+    }
+  }
+}

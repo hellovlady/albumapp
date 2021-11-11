@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" text="" defaultHref="contact-list"></ion-back-button>
+      <ion-label>
+        Notification
+      </ion-label>
+    </ion-buttons>
+    <!-- <ion-buttons slot="end">
+      <ion-button class="menu" fill="outline" color="light">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let multirow of grid">
+      <ion-col *ngFor="let row of multirow" >
+        <div *ngIf="row">
+          <app-album thumbnail="{{row.uploadcare_url}}" album_id="{{row.photo_id}}" title="{{row.caption}}" [comments]="row.comment_count" url='comments'></app-album>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,61 @@
+<div class="comment" [style.margin-left]="depth * 60 + 'px'">
+  <div class="comment-header" [style.border-left]="depth ? '1px solid #F7F7F7' : ''">
+    <div class="avatar">
+      <ion-thumbnail>
+        <img [src]="avatar">
+      </ion-thumbnail>
+    </div>
+    <div class="comment-info">
+      <ion-label class="comment-name">{{ name }}</ion-label>
+      <ion-label class="comment-date">{{ date }} | {{ time }}</ion-label>
+    </div>
+  </div>
+  <div class="comment-container" [style.border-left]="subComment ? '1px solid #F7F7F7' : ''">
+    <div class="comment-content">
+      <ion-label color="dark">
+        {{ comment }}
+      </ion-label>
+    </div>
+    <div class="comment-footer">
+      <a size="small" slot="end" fill="clear" *ngIf="reply" (click)="replyInput()" tappable>
+        Reply
+      </a>
+      <ion-label *ngIf="subComment?.length > 0" (click)="hideReply()" tappable>
+        Hide Reply
+      </ion-label>
+      <!-- <ion-label *ngIf="reply">
+           Reply
+      </ion-label> -->
+    </div>
+    <div class="add-comment" *ngIf="replyStatus">
+      <ion-input placeholder="Comment" [(ngModel)]="commentContent">
+          <ion-button (click)="giveComment(client_id, album_id, photo_id, parent_id, commentContent)">
+            <ion-icon slot="icon-only" src="assets/icon/send.svg"></ion-icon>
+          </ion-button>
+      </ion-input>
+    </div>
+
+    <div *ngIf="showReply">
+      <div *ngFor="let sub of subComment" >
+        <div class="comment-header" [style.border-left]="depth ? '1px solid #F7F7F7' : ''">
+          <div class="avatar">
+            <ion-thumbnail>
+              <img [src]="avatar">
+            </ion-thumbnail>
+          </div>
+          <div class="comment-info">
+            <ion-label class="comment-name">{{ sub.first_name + ' ' + sub.last_name }}</ion-label>
+            <ion-label class="comment-date">{{ sub.date }} | {{ sub.time }}</ion-label>
+          </div>
+        </div>
+        <div class="comment-container" [style.border-left]="subComment ? '1px solid #F7F7F7' : ''">
+          <div class="comment-content">
+            <ion-label color="dark">
+              {{ sub.comment }}
+            </ion-label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

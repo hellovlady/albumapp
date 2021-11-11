@@ -1,0 +1,91 @@
+ion-content {
+    --background: white;
+  
+    .camera {
+      --border-radius: 10px;
+      --border-width: 1px;
+      margin-right: 8px;
+      width: 42px;
+      height: 42px;
+      --border-color: white;
+      --padding-start: 10px;
+      --padding-end: 10px;
+      --background-activated: transparent;
+    }
+  
+    ion-button {
+      --border-radius: 10px;
+      --border-width: 1px;
+      width: 40px;
+      height: 40px;
+      --border-color: white;
+      --padding-start: 10px;
+      --padding-end: 10px;
+      --background-activated: transparent;
+    }
+  }
+  
+  ion-toolbar {
+    --padding-end: 15px;
+    --padding-top: 20px;
+    --padding-bottom: 10px;
+    --border-width: 0px !important;
+    ion-back-button {
+      margin-inline-start: 10px;
+      margin-inline-end: 10px;
+    }
+    .menu {
+      --border-width: 1px;
+      --border-radius: 10px;
+      height: 40px;
+      width: 40px;
+    }
+  }
+  
+  .search {
+    padding: 0px 20px;
+    margin-bottom: 30px;
+    border: none;
+    img {
+      padding-inline-start: 30px;
+    }
+    ion-input {
+      --padding-start: 10px !important;
+      margin-bottom: 10px;
+    }
+    ion-label {
+      font-size: 14px;
+      margin: 10px;
+    }
+  }
+  
+  .recent {
+    padding: 20px;
+    ion-label {
+      font-size: 14px;
+    }
+    .recent-contacts {
+      margin-top: 10px;
+      ion-col .recent-contact {
+        padding: 0px;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        ion-thumbnail {
+          --size: 50px;
+          --border-radius: 10px;
+          border: 1px solid white;
+        }
+        ion-label {
+          margin-top: 5px;
+          font-size: 12px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  
+  .ios .header {
+    margin-top: 40px;
+  }

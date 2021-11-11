@@ -1,0 +1,12 @@
+<!-- <ion-item class="contact" (click)="gotoUserAlbum(user_id)"> -->
+<ion-item class="contact">
+  <div slot="start" class="contact-avatar">
+    <ion-thumbnail>
+      <img [src]="avatar">
+    </ion-thumbnail>
+  </div>
+  <div class="contact-detail">
+    <ion-label class="contact-name">{{ name }}</ion-label>
+    <ion-label *ngIf="statusText" class="contact-statusText">{{ statusText }}</ion-label>
+  </div>
+</ion-item>

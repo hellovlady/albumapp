@@ -1,0 +1,45 @@
+.like-card {
+  display: flex;
+  justify-content: space-between;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1.5px solid #F8F8F8;
+
+  .avatar {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-inline-end: 0px;
+    ion-thumbnail{
+      --size: 50px;
+      --border-radius: 10px;
+    }
+  }
+  .like-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    margin-left: 20px;
+    .like-name {
+      color: black;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .like-time {
+      color: #a6a6a6;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+  .photo {
+    ion-thumbnail{
+      --size: 50px;
+      --border-radius: 10px;
+    }
+  }
+}

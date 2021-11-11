@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" text="" defaultHref="contact-list"></ion-back-button>
+      <ion-label>
+       {{album_name}} <br/>
+        {{user_name}}
+      </ion-label>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-label class="ion-margin-end">
+        Likes: {{like_count}}
+      </ion-label>
+      <ion-button class="menu" fill="outline" color="light" (click)="handleModal()">
+        <ion-icon name="eye"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let multirow of grid">
+      <ion-col *ngFor="let row of multirow">
+        <div *ngIf="row">
+          <app-caption thumbnail="{{row.uploadcare_url}}" photo_id="{{row.id}}" title="{{row.caption}}"></app-caption>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- <ion-row>
+      <ion-col>
+        <app-caption thumbnail="assets/images/image (1).png" title="c@ption 1"></app-caption>
+      </ion-col>
+      <ion-col>
+        <app-caption thumbnail="assets/images/image (2).png" title="c@ption 2"></app-caption>
+      </ion-col>
+    </ion-row> -->
+  </ion-grid>
+</ion-content>

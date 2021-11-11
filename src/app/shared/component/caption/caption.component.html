@@ -1,0 +1,15 @@
+<ion-card>
+  <img [src]="thumbnail" width="100%" #caption/>
+  <ion-card-header color="light">
+    <ion-card-title>
+      {{ title }}
+      <ion-label color="primary" *ngIf="comments">
+        ({{comments}})
+      </ion-label>
+      <img (click)="editCaption(photo_id)" src="assets/icon/edit.svg" alt="" *ngIf="edit">
+    </ion-card-title>
+  </ion-card-header>
+  <ion-button (click)="deleteCaption(photo_id)" *ngIf="edit">
+    <img src="assets/icon/trash.svg" alt="">
+  </ion-button>
+</ion-card>

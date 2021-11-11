@@ -1,0 +1,20 @@
+<ion-item class="contact">
+  <div slot="start" class="contact-avatar">
+    <ion-thumbnail>
+      <img [src]="avatar">
+    </ion-thumbnail>
+    <ion-badge *ngIf="notification > 0">{{ notification }}</ion-badge>
+  </div>
+  <div class="contact-detail">
+    <ion-label class="contact-name">{{ name }}</ion-label>
+    <ion-label class="contact-phone">+{{ phone }}</ion-label>
+  </div>
+  <div slot="end" class="contact-album">
+    <ion-button fill="clear" *ngIf="block === 0">
+      <img src="assets/icon/block.svg">
+    </ion-button>
+    <ion-button class="user-album" fill="clear" (click)="goUserAlbumPage(user_id, phone, block)">
+      <img src="assets/icon/album.svg">
+    </ion-button>
+  </div>
+</ion-item>

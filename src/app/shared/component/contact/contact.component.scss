@@ -1,0 +1,62 @@
+.contact {
+  display: flex;
+  justify-content: space-between;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1.5px solid #F8F8F8;
+
+  .contact-avatar {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-inline-end: 0px;
+    ion-thumbnail{
+      --size: 50px;
+      --border-radius: 10px;
+    }
+    ion-badge {
+      position: absolute;
+      border-radius: 50%;
+      font-size: 12px;
+      width: 25px;
+      height: 25px;
+      padding: 0px;
+      align-items: center;
+      display: flex;
+      left: -9px;
+      justify-content: center;
+      top: -5px;
+    }
+  }
+  .contact-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    margin-left: 20px;
+    .contact-name {
+      color: black;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .contact-phone {
+      color: #a6a6a6;
+      font-size: 12px;
+    }
+  }
+  .contact-album {
+    margin: 0px;
+    .user-album {
+      margin-left: 20px;
+    }
+  }
+  ion-button.button-clear{
+    --padding-start: 0px;
+    --padding-end: 0px;
+    margin-left: 10px;
+  }
+}

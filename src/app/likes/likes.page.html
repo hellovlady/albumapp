@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" text="" defaultHref="contact-list"></ion-back-button>
+      <ion-label>
+        Likes
+      </ion-label>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-like-card 
+    *ngFor="let list of like_list"
+    avatar="{{list.avatar}}" 
+    photo="{{list.uploadcare_url}}" 
+    name="{{list.first_name + ' ' + list.last_name}}" 
+    time="{{list.past_time}}"
+    photo_id="{{list.photo_id}}"
+  >
+  </app-like-card>
+</ion-content>

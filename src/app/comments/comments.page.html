@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" text="" defaultHref="notification"></ion-back-button>
+      <ion-label>
+        Comments
+      </ion-label>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- <ion-card>
+    <app-comment avatar="assets/avatars/contact-avatar1.png" name="Martha Devis" time="12:00 AM" date="12 Jan 2021" 
+      comment="The Amazing And Astonishing Photographs Of Nature 🤞😊" [subComment]="true"></app-comment>
+    <app-comment avatar="assets/avatars/contact-avatar2.png" name="Martha Devis" time="12:00 AM" date="12 Jan 2021" 
+      comment="I Hope U Guys Like It 🤞😊" [depth]="1"></app-comment>
+  </ion-card>
+  <ion-card>
+    <app-comment avatar="assets/avatars/contact-avatar3.png" name="Kristen Turner" time="12:00 AM" date="12 Jan 2021" 
+    comment="Spectacular Capture!"></app-comment>
+  </ion-card>
+  <ion-card>
+    <app-comment avatar="assets/avatars/contact-avatar4.png" name="Ashley Castilo" time="12:00 AM" date="12 Jan 2021" 
+    comment="Outstanding!" [reply]="2"></app-comment>
+  </ion-card> -->
+
+  <ion-card *ngFor="let list of comment_list">
+    <app-comment avatar="{{list.avatar}}" name="{{list.first_name + ' ' + list.last_name}}" time="{{list.time}}" date="{{list.date}}" 
+      comment="{{list.comment}}" [client_id]=list.client_id [album_id]=list.album_id [photo_id]=photo_id [reply]='1' [parent_id]=list.id [subComment]="list.children"></app-comment>
+  </ion-card>
+
+  <div class="add-comment">
+    <ion-input placeholder="Comment" [(ngModel)]="comment_content">
+      <ion-button (click)="giveComment()">
+        <ion-icon slot="icon-only" src="assets/icon/send.svg"></ion-icon>
+      </ion-button>
+    </ion-input>
+  </div>
+</ion-content>

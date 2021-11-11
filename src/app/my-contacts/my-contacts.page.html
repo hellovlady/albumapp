@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" text="" defaultHref="contact-list"></ion-back-button>
+      <ion-label>
+        My Contacts
+      </ion-label>
+    </ion-buttons>
+    <ion-button class="camera" slot="end" fill="outline" (click)="handleAddContact()">
+      <img src="assets/icon/sms.svg">
+    </ion-button>
+  </ion-toolbar>
+  <ion-toolbar class="search" color="primary">
+    <ion-input type="text" placeholder="Search Contacts" (ionInput)="getContactListSearch($event)" padding>
+      <img src="assets/icon/search.svg"/>
+    </ion-input>
+    <ion-label>
+      {{contact_count}} Contacts
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let contact of contact_list">
+    <app-my-contact avatar="{{contact.avatar}}" name="{{contact.first_name + ' ' +  contact.last_name}}" statusText="{{contact.status}}" user_id="{{contact.client_id}}" *ngIf="contact.client_id"></app-my-contact>
+    <app-my-contact avatar="assets/icon/profile-avatar.svg" name="{{contact.clientname}}" statusText="{{contact.status}}" user_id="{{contact.client_id}}" *ngIf="contact.client_id == null" ></app-my-contact>
+  </div>
+  
+
+  <!-- <app-my-contact avatar="assets/avatars/contact-avatar1.png" name="Paul Johnson" statusText="I Love Music And Motorbikes❤️🔥"></app-my-contact>
+  <app-my-contact avatar="assets/avatars/contact-avatar2.png" name="Michael Price" statusText="We Sell Chicken And Fish.
+  Place Your Order Now!"></app-my-contact>
+  <app-my-contact avatar="assets/avatars/default.png" name="Marry Smith" statusText="I Love Jesus❤️"></app-my-contact>
+  <app-my-contact avatar="assets/avatars/contact-avatar3.png" name="Barry White" statusText="Call Now And Place Your Order.
+  We Also Do Delivery"></app-my-contact>
+  <app-my-contact avatar="assets/avatars/contact-avatar4.png" name="Paul Johnson" statusText="I Am Using @Lbum App"></app-my-contact>
+  <app-my-contact avatar="assets/avatars/contact-avatar4.png" name="Sarah Wilson" statusText=""></app-my-contact> -->
+</ion-content>

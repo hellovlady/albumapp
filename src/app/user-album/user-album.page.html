@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" text="" defaultHref="contact-list"></ion-back-button>
+      <ion-label>
+        {{first_name + ' ' + last_name}}
+      </ion-label>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-label class="ion-margin-end ion-text-center">
+        Total Likes:<br/>
+        {{total_likes}}
+      </ion-label>
+      <ion-button class="menu" fill="outline" color="light" (click)="handleUser($event)">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="status-text" color="primary">
+    <ion-label color="light">
+      {{status}}
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+
+  <ion-row *ngFor="let multirow of grid">
+    <ion-col *ngFor="let row of multirow" >
+      <div *ngIf="row">
+        <app-album thumbnail="assets/images/album5.png" *ngIf="row.noAlbumImage" album_id="{{row.id}}" title="{{row.name}}"></app-album>
+        <app-album thumbnail="{{row.uploadcare_url}}" *ngIf="row.isAlbumImage" album_id="{{row.id}}" title="{{row.name}}"></app-album>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  </ion-grid>
+</ion-content>
