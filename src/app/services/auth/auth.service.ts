@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { tap, take, map, switchMap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { tap, map, switchMap } from 'rxjs/operators';
 import { Observable, BehaviorSubject, from , of } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { Platform, AlertController, NavController, LoadingController } from '@ionic/angular';
+import { Platform, NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { User } from './user';
 import { AuthResponse } from './auth-response';
 import { EnvService } from '../env.service';
 import { Router } from '@angular/router';
-// import { HTTP } from '@ionic-native/http/ngx';
 
 const helper = new JwtHelperService();
 
